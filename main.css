@@ -73,3 +73,7 @@ li {
   margin-top: 10px;
   font-size: 1.3em;
 }
+
+.crossOut {
+  text-decoration: line-through;
+}
