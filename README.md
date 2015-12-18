@@ -1,14 +1,12 @@
 # To-Do-List
 Working on a to-do-list application!
 
-**Added ability to add task to the list.
+**Added ability to add task to the list. <strong>DONE</strong>
 
-**Added an alert to tell users to enter a task on a blank string.
+**Added an alert to tell users to enter a task on a blank string. <strong>DONE</strong>
 
-**Added a remove all function.
+**Added a remove all function. <strong>DONE</strong>
 
-**Added a event where clicking a task crosses it out.
+**Added a event where clicking a task crosses it out. <strong>DONE</strong>
 
-**Still a work in progress
-
-Currently Testable at: http://codepen.io/laere/pen/rxNRbm
+Add Media Queries for mobile!
