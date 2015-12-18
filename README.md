@@ -10,3 +10,5 @@
 **Added a event where clicking a task crosses it out. <strong>DONE</strong>
 
 Add Media Queries for mobile!
+
+Replace onclick handler with Event Listeners!!!
