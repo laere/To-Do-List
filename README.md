@@ -1,5 +1,5 @@
-# To-Do-List
-Working on a to-do-list application!
+# To-Do-List App
+
 
 **Added ability to add task to the list. <strong>DONE</strong>
 
