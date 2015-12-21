@@ -2,26 +2,27 @@
 <html>
 
 <head>
-  <title>To Do List App</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href='https://fonts.googleapis.com/css?family=Cabin:400,500,400italic,500italic,600,600italic,700,700italic' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="main.css">
-  
 </head>
 
 <body>
-  <h1>To-Do List</h1>
+<h1>To-Do List</h1>
+<h2 id="warning"></h2>
 
+<div id="container">
   <input type="text" placeholder="Enter task here..." id="userTask">
   <input type="submit" value="Add" id="btn" onClick=addTask()>
   <input type="submit" value="Remove" id="removeBtn" onClick=removeAll()>
-  <div class="container">
-    <ul id="myUL">
-      
-    </ul>
-  </div>
-  <script src="script.js"></script>
+</div>
+
+<div id="container-two">
+     <ul id="myUL">
+     </ul>
+</div>
+<script src="script.js"></script>
 </body>
 
 </html>
