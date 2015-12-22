@@ -14,8 +14,8 @@ BASE STYLING
 h1, h2 {
     font-family: 'Lobster', sans-serif;
     text-align: center;
-    text-shadow: 1px 1px 3px black;
-    letter-spacing: 1px;
+    text-shadow: 1px 1px 5px black;
+    letter-spacing: 2px;
     color: white;
 }
 
@@ -31,6 +31,7 @@ li {
     color: black;
     font-weight: bold;
     margin: 0;
+    cursor:pointer;
 }
 
 
@@ -46,10 +47,10 @@ CONTAINERS
 *******************************************/
 
 #container {
-  margin: 0 auto;
-  width: 500px;
+  margin: 10px auto;
+  width: 550px;
   background-color: red;
-  padding: 10px;
+  padding: 15px;
   background-color: #247BA0;
   border-radius: 5px;
   box-shadow: 1px 1px 5px black;
@@ -58,7 +59,7 @@ CONTAINERS
 
 #container-two {
     background-color: #fff;
-    width: 500px;
+    width: 550px;
     height: 500px;
     margin: 0 auto;
     border-radius: 5px;
@@ -71,28 +72,33 @@ INPUT FIELD
 *******************************************/
 
 input[type=text] {
-    height: 25px;
-    width: 200px;
+    height: 30px;
+    width: 190px;
 }
 
 /*******************************************
 BUTTONS
 *******************************************/
 #btn, 
-#removeBtn {
-    width: 89px;
-    height: 25px;
-    margin: 0 10px;
+#removeBtn,
+#clear {
+    width: 85px;
+    height: 30px;
     color: white;
     border: none;
     border-radius: 5px;
     font-weight: bold;
     box-shadow: 1px 1px 5px black;
+    margin: 0 10px;
+    text-align: center;
+    
+    
     
     
 }
 
-#btn {
+#btn,
+#clear {
    background-color: #70C1B3;
    border-bottom: 1px solid #397A00;
 }
@@ -114,8 +120,10 @@ BUTTONS
 
 #removeBtn:hover,
 #btn:hover,
-#delete:hover {
+#delete:hover,
+#clear:hover {
     opacity: .75;
+    cursor: pointer;
 }
 /*******************************************
 STYLES USED IN SCRIPT
