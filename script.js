@@ -1,12 +1,21 @@
 var warning = document.getElementById('warning');
+var myUL = document.getElementById('myUL');
+
+
+var listItemArray = [];
+
+
+
+
 
 // create a function that adds task on user click button
 function addTask() {
 
   // retrieves input 
   var input = document.getElementById('userTask');
-  
-
+  var inputValue = document.createTextNode(input.value);
+  var addLi = document.createElement('LI');
+  var deleteTask = document.createElement('input');
   //tells user to enter a task
   if (input.value === '') {
     warning.innerHTML = "Please enter a task!"
@@ -16,33 +25,53 @@ function addTask() {
       warning.innerHTML = '';
   }
 
-  // create a list element
-  var addLi = document.createElement('LI');
-
+  //make this a delete button instead
+  
+  deleteTask.setAttribute('type', 'submit');
+  deleteTask.setAttribute('value', 'Remove');
+  deleteTask.setAttribute('id', 'delete');
+  
   // define behaviour for onClick
-  addLi.addEventListener('click', taskToggle, false);
+  // addLi.addEventListener('click', taskToggle, false);
 
-  // create a text node with the value of the input
-  var inputValue = document.createTextNode(input.value);
+ //add the textValue to the list item
+ addLi.appendChild(inputValue);
+ addLi.appendChild(deleteTask);
+  
+ 
+ myUL.appendChild(addLi);
+ 
+ deleteTask.addEventListener('click', function(){
+   myUL.removeChild(addLi);
+ });
+  
+  //LOCAL STORAGE
+  
+  //add the list item to an array
+  listItemArray.push(input.value);
+  
+  localStorage.setItem("todos", JSON.stringify(listItemArray));
+  
+  
+  // var retrieveTodos = JSON.parse(localStorage.getItem('todos'));
 
-  //add the textValue to the list item
-  addLi.appendChild(inputValue);
-  //add the list item to the parent element, ul
-  document.getElementById('myUL').appendChild(addLi)
-
-  //clears the input value after a task is added
-  input.value = '';
+  // listItemArray.forEach(function(current, index, array) {
+  //   var textNode = document.createTextNode();
+  //   addLi.appendChild(textNode);
+  // });
 
 }
+
+
 
 
 
 //function removes all list elements created
 function removeAll() {
   //store the UL element
-  var removeAllTasks = document.getElementById('myUL');
+  // var removeAllTasks = document.getElementById('myUL');
   //use the innerHTML function to update the UL with an empty string
-  removeAllTasks.innerHTML = '';
+  myUL.innerHTML = '';
 
 }
 
