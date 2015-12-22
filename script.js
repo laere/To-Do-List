@@ -29,7 +29,7 @@ function addTask() {
   //make this a delete button instead
   
   deleteTask.setAttribute('type', 'submit');
-  deleteTask.setAttribute('value', 'Remove');
+  deleteTask.setAttribute('value', 'X');
   deleteTask.setAttribute('id', 'delete');
   
   // define behaviour for onClick
@@ -75,9 +75,6 @@ clear.addEventListener('click', clearInput, false);
 
 //function removes all list elements created
 function removeAll() {
-  //store the UL element
-  // var removeAllTasks = document.getElementById('myUL');
-  //use the innerHTML function to update the UL with an empty string
   myUL.innerHTML = '';
 
 }
