@@ -2,7 +2,7 @@
 FONTS
 *******************************************/
 @import url(https://fonts.googleapis.com/css?family=Lobster);
-@import url(https://fonts.googleapis.com/css?family=Arimo:400,700);
+@import url(https://fonts.googleapis.com/css?family=Arimo);
 
 /*******************************************
 BASE STYLING
@@ -14,6 +14,8 @@ BASE STYLING
 h1, h2 {
     font-family: 'Lobster', sans-serif;
     text-align: center;
+    text-shadow: 1px 1px 3px black;
+    letter-spacing: 1px;
 }
 
 body {
@@ -28,6 +30,10 @@ li {
     font-weight: bold;
 }
 
+#userTask {
+    border-radius: 5px;
+    outline: none;
+}
 
 /*******************************************
 CONTAINERS
@@ -38,14 +44,14 @@ CONTAINERS
   width: 400px;
   background-color: red;
   padding: 10px;
-  background-color: #444;
+  background-color: #888;
   border-radius: 5px;
   box-shadow: 1px 1px 5px black;
   
 }
 
 #container-two {
-    background-color: #666;
+    background-color: #444;
     width: 400px;
     height: 400px;
     margin: 0 auto;
@@ -63,8 +69,28 @@ INPUT FIELD
 /*******************************************
 BUTTONS
 *******************************************/
+#btn, 
+#removeBtn {
+    width: 89px;
+    height: 20px;
+    margin: 5px;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    
+    
+}
 
+#btn {
+   background-color: #5DB90C;
+   border-bottom: 1px solid #397A00;
+}
 
+#removeBtn {
+    background-color: #D10000;
+    border-bottom: 1px solid #880000;
+}
 /*******************************************
 STYLES USED IN SCRIPT
 *******************************************/
@@ -78,5 +104,6 @@ STYLES USED IN SCRIPT
 #warning {
     color: red;
     font-weight: bold;
+    
 }
 
