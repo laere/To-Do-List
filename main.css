@@ -26,13 +26,27 @@ body {
 li {
     padding: 10px 0;
     list-style-type: circle;
-    color: white;
+    color: black;
     font-weight: bold;
+    margin: 0;
 }
+
 
 #userTask {
     border-radius: 5px;
     outline: none;
+}
+
+
+
+#delete {
+   margin: 0 15px;
+   border: none;
+   background-color: #D10000;
+   border-bottom: 1px solid #880000;
+   color: white;
+   font-weight: bold;
+   border-radius: 2px;
 }
 
 /*******************************************
@@ -41,19 +55,19 @@ CONTAINERS
 
 #container {
   margin: 0 auto;
-  width: 400px;
+  width: 500px;
   background-color: red;
   padding: 10px;
-  background-color: #888;
+  background-color: #999;
   border-radius: 5px;
   box-shadow: 1px 1px 5px black;
   
 }
 
 #container-two {
-    background-color: #444;
-    width: 400px;
-    height: 400px;
+    background-color: #fff;
+    width: 500px;
+    height: 500px;
     margin: 0 auto;
     border-radius: 5px;
     box-shadow: 2px 2px 10px black;
@@ -64,7 +78,10 @@ CONTAINERS
 INPUT FIELD
 *******************************************/
 
-
+input[type=text] {
+    height: 25px;
+    width: 200px;
+}
 
 /*******************************************
 BUTTONS
@@ -72,12 +89,13 @@ BUTTONS
 #btn, 
 #removeBtn {
     width: 89px;
-    height: 20px;
-    margin: 5px;
+    height: 25px;
+    margin: 0 10px;
     color: white;
     border: none;
     border-radius: 5px;
     font-weight: bold;
+    box-shadow: 1px 1px 5px black;
     
     
 }
