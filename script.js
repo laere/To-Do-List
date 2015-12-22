@@ -1,6 +1,6 @@
 var warning = document.getElementById('warning');
 var myUL = document.getElementById('myUL');
-
+var clear = document.getElementById('clear')
 
 var listItemArray = [];
 
@@ -16,6 +16,7 @@ function addTask() {
   var inputValue = document.createTextNode(input.value);
   var addLi = document.createElement('LI');
   var deleteTask = document.createElement('input');
+  
   //tells user to enter a task
   if (input.value === '') {
     warning.innerHTML = "Please enter a task!"
@@ -32,7 +33,7 @@ function addTask() {
   deleteTask.setAttribute('id', 'delete');
   
   // define behaviour for onClick
-   addLi.addEventListener('click', taskToggle, false);
+  addLi.addEventListener('click', taskToggle, false);
 
  //add the textValue to the list item
  addLi.appendChild(inputValue);
@@ -45,6 +46,7 @@ function addTask() {
    myUL.removeChild(addLi);
  });
   
+
   //LOCAL STORAGE
   
   //add the list item to an array
@@ -62,7 +64,12 @@ function addTask() {
 
 }
 
+function clearInput() {
+  var input = document.getElementById('userTask');
+  input.value = '';
+}
 
+clear.addEventListener('click', clearInput, false);
 
 
 
