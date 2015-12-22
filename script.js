@@ -32,7 +32,7 @@ function addTask() {
   deleteTask.setAttribute('id', 'delete');
   
   // define behaviour for onClick
-  // addLi.addEventListener('click', taskToggle, false);
+   addLi.addEventListener('click', taskToggle, false);
 
  //add the textValue to the list item
  addLi.appendChild(inputValue);
