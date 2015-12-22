@@ -16,11 +16,13 @@ h1, h2 {
     text-align: center;
     text-shadow: 1px 1px 3px black;
     letter-spacing: 1px;
+    color: white;
 }
 
 body {
     font-family: 'Arimo', sans-serif;
     line-height: 1.2;
+    background-color: #50514F;
 }
 
 li {
@@ -39,16 +41,6 @@ li {
 
 
 
-#delete {
-   margin: 0 15px;
-   border: none;
-   background-color: #D10000;
-   border-bottom: 1px solid #880000;
-   color: white;
-   font-weight: bold;
-   border-radius: 2px;
-}
-
 /*******************************************
 CONTAINERS
 *******************************************/
@@ -58,7 +50,7 @@ CONTAINERS
   width: 500px;
   background-color: red;
   padding: 10px;
-  background-color: #999;
+  background-color: #247BA0;
   border-radius: 5px;
   box-shadow: 1px 1px 5px black;
   
@@ -101,13 +93,29 @@ BUTTONS
 }
 
 #btn {
-   background-color: #5DB90C;
+   background-color: #70C1B3;
    border-bottom: 1px solid #397A00;
 }
 
 #removeBtn {
-    background-color: #D10000;
+    background-color: #F25F5C;
     border-bottom: 1px solid #880000;
+}
+
+#delete {
+   margin: 0 15px;
+   border: none;
+   background-color: #F25F5C;
+   border-bottom: 1px solid #880000;
+   color: white;
+   font-weight: bold;
+   border-radius: 2px;
+}
+
+#removeBtn:hover,
+#btn:hover,
+#delete:hover {
+    opacity: .75;
 }
 /*******************************************
 STYLES USED IN SCRIPT
