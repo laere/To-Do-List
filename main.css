@@ -116,6 +116,7 @@ BUTTONS
    color: white;
    font-weight: bold;
    border-radius: 2px;
+   width: 30px;
 }
 
 #removeBtn:hover,
