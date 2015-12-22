@@ -16,3 +16,7 @@
 Add Media Queries for mobile!
 
 Replace onclick handler with Event Listeners!!!
+
+Add Mouse movement sorting!
+
+Add enter keyboard event!
