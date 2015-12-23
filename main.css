@@ -86,7 +86,7 @@ BUTTONS
     height: 30px;
     color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: 20px;
     font-weight: bold;
     box-shadow: 1px 1px 5px black;
     margin: 0 10px;
@@ -115,7 +115,7 @@ BUTTONS
    border-bottom: 1px solid #880000;
    color: white;
    font-weight: bold;
-   border-radius: 2px;
+   border-radius: 20px;
    width: 30px;
 }
 
