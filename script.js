@@ -1,6 +1,7 @@
 var warning = document.getElementById('warning');
 var myUL = document.getElementById('myUL');
-var clear = document.getElementById('clear')
+var clear = document.getElementById('clear');
+var input = document.getElementById('userTask');
 
 var listItemArray = [];
 
@@ -11,8 +12,7 @@ var listItemArray = [];
 // create a function that adds task on user click button
 function addTask() {
 
-  // retrieves input 
-  var input = document.getElementById('userTask');
+  // retrieves input
   var inputValue = document.createTextNode(input.value);
   var addLi = document.createElement('LI');
   var deleteTask = document.createElement('input');
@@ -65,7 +65,6 @@ function addTask() {
 }
 
 function clearInput() {
-  var input = document.getElementById('userTask');
   input.value = '';
 }
 
