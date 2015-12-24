@@ -1,13 +1,36 @@
 var warning = document.getElementById('warning');
 var myUL = document.getElementById('myUL');
-var clear = document.getElementById('clear');
 var input = document.getElementById('userTask');
 
 var listItemArray = [];
 
 
 
+document.addEventListener('keypress', function(event) {
+   var characterCode = event.charCode || event.which || event.keyCode;    //set var to charCode or keyCode. Did it this way for better browser support
+   if (characterCode === 13) {
+    addTask();
+   }
+}, false);
 
+document.getElementById('container').addEventListener('click', function(event) {
+  var element = event.target;
+  if (element === document.getElementById('btn')) {
+    addTask();
+  }
+  else if (element === document.getElementById('clear')) {
+    clearInput();
+  }
+  else if (element === document.getElementById('removeBtn')) {
+    removeAll();
+  }
+  event.stopPropagation();
+}, false);
+
+
+/*
+      ALL FUNCTIONS BELOW
+*/
 
 // create a function that adds task on user click button
 function addTask() {
@@ -19,7 +42,7 @@ function addTask() {
   
   //tells user to enter a task
   if (input.value === '') {
-    warning.innerHTML = "Please enter a task!"
+    warning.innerHTML = 'Please enter a task!';
     // ends execution of this function, because if the value is not valid, why do anything else?
     return;
   } else {
@@ -52,7 +75,7 @@ function addTask() {
   //add the list item to an array
   listItemArray.push(input.value);
   
-  localStorage.setItem("todos", JSON.stringify(listItemArray));
+  localStorage.setItem('todos', JSON.stringify(listItemArray));
   
   
   // var retrieveTodos = JSON.parse(localStorage.getItem('todos'));
@@ -68,7 +91,6 @@ function clearInput() {
   input.value = '';
 }
 
-clear.addEventListener('click', clearInput, false);
 
 
 
@@ -92,10 +114,3 @@ function taskToggle(e) {
   } else li.classList.add('crossOut');
 
 }
-
-document.addEventListener('keypress', function(event) {
-   var characterCode = event.charCode || event.which || event.keyCode;    //set var to charCode or keyCode. Did it this way for better browser support
-   if (characterCode === 13) {
-    addTask();
-   }
-}, false);
