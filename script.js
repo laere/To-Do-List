@@ -94,3 +94,9 @@ function taskToggle(e) {
 
 }
 
+document.addEventListener('keypress', function(event) {
+   var characterCode = event.charCode || event.which || event.keyCode;    //set var to charCode or keyCode. Did it this way for better browser support
+   if (characterCode === 13) {
+    addTask();
+   }
+}, false);
