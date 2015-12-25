@@ -14,6 +14,7 @@ window.onload = function() {
   fetch('todos', render);
   clear.addEventListener('click', clearInput, false);
   
+  
 };
 
 function addTask() {
