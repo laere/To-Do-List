@@ -3,7 +3,7 @@ var listItemArray = [];
   
 window.onload = function() {
 //global variables (global scope)
- 
+  var warning = document.getElementById('warning');
   
   var clear = document.getElementById('clear')
 
@@ -31,9 +31,9 @@ function addTask() {
 // create a function that adds task on user click button
 function renderList(val) {
   //variables within addTask scope
+  var inputValue = document.createTextNode(val);
   var addLi = document.createElement('LI');
   var deleteTask = document.createElement('input');
-  var inputValue = document.createTextNode(val);
   var myUL = document.getElementById('myUL');
 
   //define attributes of delete task button
@@ -55,16 +55,9 @@ function renderList(val) {
   
 }
 
-
-//warns user to enter task if validate = false
-function warning(warning) {
-  var warning = document.getElementById('warning');
-  warning.innerHTML = 'Please enter a task!';
-}
-
-//if input exists; true, else call warning function
+//if input exists; true, else false
 function validate(input) {
-  return input.value.length ? input : warning();
+  return input.value.length ? input : false;
 }
 
 //stores user input into local storage
