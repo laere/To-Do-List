@@ -50,6 +50,7 @@ function renderList(val) {
 
  //event that deletes single tasks
   deleteTask.addEventListener('click', function(){
+  
     myUL.removeChild(addLi);
   });
   
@@ -90,11 +91,9 @@ function clearInput() {
 }
 
 //function removes all list elements created
-function removeAll(myUL) {
-  // while(myUL.firstChild) myUL.firstChild.remove()
+function removeAll(myUL, key) {
+  //while(myUL.firstChild) myUL.firstChild.remove()//
   myUL.innerHTML = '';
-  
- 
 }
 
 //define crossout function
