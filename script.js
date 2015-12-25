@@ -92,7 +92,6 @@ function clearInput() {
 
 //function removes all list elements created
 function removeAll(myUL) {
-  //while(myUL.firstChild) myUL.firstChild.remove()//
   myUL.innerHTML = '';
 }
 
