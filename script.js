@@ -83,8 +83,6 @@ function render(data) {
 }
 
 
-
-
 //define clear button
 function clearInput() {
   var input = document.getElementById('userTask');
@@ -93,7 +91,8 @@ function clearInput() {
 
 //function removes all list elements created
 function removeAll(myUL) {
-  while(myUL.firstChild) myUL.firstChild.remove()
+  // while(myUL.firstChild) myUL.firstChild.remove()
+  myUL.innerHTML = '';
   
  
 }
