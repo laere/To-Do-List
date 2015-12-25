@@ -3,15 +3,16 @@ var listItemArray = [];
   
 window.onload = function() {
 //global variables (global scope)
-  var warning = document.getElementById('warning');
-  
-  var clear = document.getElementById('clear')
-
-
+  // var warning = document.getElementById('warning');
+  var removeButton = document.querySelector('#removeBtn');
+  var addButton = document.querySelector('#btn');
+  var clear = document.getElementById('clear');
   var key = 'todos';
 
 //this is where the party starts
   fetch('todos', render);
+  addButton.addEventListener('click', addTask, false);
+  removeButton.addEventListener('click', removeAll, false);
   clear.addEventListener('click', clearInput, false);
   
   
@@ -51,7 +52,9 @@ function renderList(val) {
 
  //event that deletes single tasks
   deleteTask.addEventListener('click', function(){
-  
+    var index = listItemArray.indexOf(val);
+    listItemArray.splice(index, 1);
+    storeListItems(listItemArray, 'todos');
     myUL.removeChild(addLi);
   });
   
@@ -86,15 +89,18 @@ function render(data) {
 
 
 //define clear button
-function clearInput() {
-  var input = document.getElementById('userTask');
+function clearInput(input) {
   input.value = '';
 }
 
 //function removes all list elements created
 function removeAll(myUL) {
   myUL.innerHTML = '';
+  listItemArray = [];
+  storeListItems(listItemArray, 'todos');
 }
+
+
 
 //define crossout function
 function taskToggle(e) {
