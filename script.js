@@ -1,12 +1,13 @@
-
+//array used for localstorage
+var listItemArray = [];
+  
 window.onload = function() {
 //global variables (global scope)
   var warning = document.getElementById('warning');
   
   var clear = document.getElementById('clear')
 
-//array used for localstorage
-  var listItemArray = [];
+
   var key = 'todos';
 
 //this is where the party starts
@@ -14,16 +15,26 @@ window.onload = function() {
   clear.addEventListener('click', clearInput, false);
   
 };
-// create a function that adds task on user click button
+
 function addTask() {
+  var input = document.getElementById('userTask');
+  //returns true or false
+  if (validate(input)) {
+    //add the list item to an array
+    listItemArray.push(input.value);
+    //stores user input into array into local storage
+    storeListItems(listItemArray, 'todos');
+    //renders the list item to the page
+    renderList(input.value);
+  }
+}
+// create a function that adds task on user click button
+function renderList(val) {
   //variables within addTask scope
   var addLi = document.createElement('LI');
   var deleteTask = document.createElement('input');
-  var input = document.getElementById('userTask');
-  var inputValue = document.createTextNode(input.value);
+  var inputValue = document.createTextNode(val);
   var myUL = document.getElementById('myUL');
-
-  validate(input)  //returns input or false
 
   //define attributes of delete task button
   deleteTask.setAttribute('type', 'submit');
@@ -36,8 +47,7 @@ function addTask() {
   addLi.appendChild(deleteTask);
  //add list element to ul element
   myUL.appendChild(addLi);
-  //add the list item to an array
-  listItemArray.push(input.value);
+
  //event that deletes single tasks
   deleteTask.addEventListener('click', function(){
     myUL.removeChild(addLi);
@@ -45,21 +55,31 @@ function addTask() {
   
 }
 
+//if input exists; true, else false
 function validate(input) {
-  return input.value.length ? input : false
+  return input.value.length ? input : false;
 }
 
+//stores user input into local storage
 function storeListItems(listItemArray, key, fetch) {
   var notes = JSON.stringify(listItemArray);
-  fetch(localStorage.setItem(key, notes));
+  //save user input, turn into strings
+  localStorage.setItem(key, notes);
 }
 
+//when called, fetches local storage information
 function fetch(key, callback) {
-  callback(JSON.parse(localStorage.getItem(key)));
+  var listItemArray = JSON.parse(localStorage.getItem(key));
+  callback(listItemArray);
 }
+
 
 function render(data) {
-  
+  //for each current value in local storage
+  data.forEach(function (current) {
+    //add it to the page
+    renderList(current);
+  });
 }
 
 
@@ -73,8 +93,9 @@ function clearInput() {
 
 //function removes all list elements created
 function removeAll(myUL) {
-  //try while(myUL.firstChild) myUL.firstChild.remove()
-  myUL.innerHTML = '';
+  while(myUL.firstChild) myUL.firstChild.remove()
+  
+ 
 }
 
 //define crossout function
