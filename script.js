@@ -3,7 +3,7 @@ var listItemArray = [];
   
 window.onload = function() {
 //global variables (global scope)
-  var warning = document.getElementById('warning');
+ 
   
   var clear = document.getElementById('clear')
 
@@ -55,9 +55,16 @@ function renderList(val) {
   
 }
 
-//if input exists; true, else false
+
+//warns user to enter task if validate = false
+function warning(warning) {
+  var warning = document.getElementById('warning');
+  warning.innerHTML = 'Please enter a task!';
+}
+
+//if input exists; true, else call warning function
 function validate(input) {
-  return input.value.length ? input : false;
+  return input.value.length ? input : warning();
 }
 
 //stores user input into local storage
