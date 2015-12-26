@@ -90,16 +90,18 @@ function render(data) {
 
 
 //define clear button
-function clearInput(input) {
+function clearInput() {
   console.log('click test');
+  var input = document.querySelector('#userTask');
   input.value = '';
  
   
 }
 
 //function removes all list elements created
-function removeAll(myUL) {
+function removeAll() {
   console.log('click test');
+  var myUL = document.querySelector('#myUL');
   myUL.innerHTML = '';
   listItemArray = [];
   storeListItems(listItemArray, 'todos');
