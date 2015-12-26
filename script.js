@@ -6,20 +6,18 @@ window.onload = function() {
   // var warning = document.getElementById('warning');
   var removeButton = document.querySelector('#removeBtn');
   var addButton = document.querySelector('#btn');
-  var clear = document.getElementById('clear');
+  var clear = document.querySelector('#clear');
   var key = 'todos';
-
 //this is where the party starts
   fetch('todos', render);
+  clear.addEventListener('click', clearInput, false);
   addButton.addEventListener('click', addTask, false);
   removeButton.addEventListener('click', removeAll, false);
-  clear.addEventListener('click', clearInput, false);
-  
-  
 };
 
 function addTask() {
-  var input = document.getElementById('userTask');
+  console.log('click test')
+  var input = document.querySelector('#userTask');
   //returns true or false
   if (validate(input)) {
     //add the list item to an array
@@ -28,7 +26,7 @@ function addTask() {
     storeListItems(listItemArray, 'todos');
     //renders the list item to the page
     renderList(input.value);
-  }
+  } 
 }
 // create a function that adds task on user click button
 function renderList(val) {
@@ -49,12 +47,15 @@ function renderList(val) {
   addLi.appendChild(deleteTask);
  //add list element to ul element
   myUL.appendChild(addLi);
-
  //event that deletes single tasks
   deleteTask.addEventListener('click', function(){
+    //values of index
     var index = listItemArray.indexOf(val);
+    //removes the index value clicked
     listItemArray.splice(index, 1);
+    //save changes to the local storage
     storeListItems(listItemArray, 'todos');
+    //remove the list item
     myUL.removeChild(addLi);
   });
   
@@ -90,11 +91,15 @@ function render(data) {
 
 //define clear button
 function clearInput(input) {
+  console.log('click test');
   input.value = '';
+ 
+  
 }
 
 //function removes all list elements created
 function removeAll(myUL) {
+  console.log('click test');
   myUL.innerHTML = '';
   listItemArray = [];
   storeListItems(listItemArray, 'todos');
