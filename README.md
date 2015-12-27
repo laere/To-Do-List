@@ -9,13 +9,13 @@
 
 **Added a event where clicking a task crosses it out. <strong>DONE</strong>
 
-**Added Local Storage (sort of)! <strong>DONE</strong>
+**Added Local Storage! <strong>DONE</strong>
 
 **Added ability to remove one task at a time! <strong>DONE</strong>
 
-Add Media Queries for mobile!
+Replace onclick handler with Event Listeners!!! **DONE**
 
-Replace onclick handler with Event Listeners!!!
+Add Media Queries!
 
 Add Mouse movement sorting!
 
