@@ -15,7 +15,7 @@
 
 Add a message that informs user to enter task on empty input!
 
-Add Media Queries!
+Add Media Queries! <strong>DONE</strong>
 
 Add Mouse movement sorting!
 
