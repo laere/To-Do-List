@@ -26,21 +26,22 @@ body {
     background-color: #50514F;
 }
 
+ul {
+    margin: 0 auto;
+    padding: 10px;
+ 
+}
+
 li {
     padding: 10px 0;
-    list-style-type: circle;
+    list-style-type: none;
     color: black;
     font-weight: bold;
     margin: 0;
     cursor:pointer;
+    display: flex;
+    flex-flow: row wrap;
 }
-
-
-#userTask {
-    border-radius: 5px;
-    outline: none;
-}
-
 
 
 /*******************************************
@@ -55,6 +56,9 @@ CONTAINERS
   background-color: #247BA0;
   border-radius: 5px;
   box-shadow: 0 6px 10px -4px black;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
   
 }
 
@@ -65,6 +69,8 @@ CONTAINERS
     margin: 0 auto;
     border-radius: 5px;
     box-shadow: 0 6px 10px -4px black;
+    display: flex;
+    flex-flow column wrap;
 }
 
 
@@ -77,6 +83,7 @@ input[type=text] {
     width: 190px;
     border: none;
     background-color: #ddd;
+    border-radius: 5px;
 }
 
 input:focus {
@@ -89,7 +96,6 @@ BUTTONS
 #btn, 
 #removeBtn,
 #clear {
-    
     width: 85px;
     height: 30px;
     color: white;
@@ -99,7 +105,6 @@ BUTTONS
     box-shadow: 0 6px 8px -6px black;
     margin: 0 10px;
     text-align: center;
-    
 }
 
 #btn,
@@ -147,3 +152,35 @@ STYLES USED IN SCRIPT
     
 }
 
+/*******************************************
+MEDIA QUERIES
+*******************************************/
+
+@media (max-width: 576px) {
+    #container {
+        flex-flow: column wrap;
+        align-items: center;
+        width: 100%;
+        
+    }
+    #container-two {
+        width: 100%;
+    }
+    input[type=text] {
+        width: 100%;
+        margin: 5px auto;
+        height: 40px;
+    }
+    
+    #btn, 
+    #removeBtn,
+    #clear {
+        margin: 5px auto;
+        border-radius: 0;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        font-size: 1.2em;
+    }
+    
+}
