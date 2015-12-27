@@ -15,6 +15,8 @@ window.onload = function() {
   removeButton.addEventListener('click', removeAll, false);
 };
 
+
+
 function addTask() {
   console.log('click test')
   var input = document.querySelector('#userTask');
@@ -81,11 +83,13 @@ function fetch(key, callback) {
 
 
 function render(data) {
+  if (data !== null  && data.hasOwnProperty('forEach')) {
   //for each current value in local storage
   data.forEach(function (current) {
     //add it to the page
     renderList(current);
   });
+  }
 }
 
 
@@ -99,7 +103,7 @@ function clearInput() {
 }
 
 //function removes all list elements created
-function removeAll() {
+function removeAll(myUL) {
   console.log('click test');
   var myUL = document.querySelector('#myUL');
   myUL.innerHTML = '';
