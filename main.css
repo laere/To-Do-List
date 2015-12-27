@@ -184,3 +184,10 @@ MEDIA QUERIES
     }
     
 }
+
+@media (orientation: landscape) {
+    #container {
+        flex-flow: row wrap;
+        justify-content: space-between;
+    }
+}
