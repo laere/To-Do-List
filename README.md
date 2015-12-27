@@ -13,7 +13,7 @@
 
 **Added ability to remove one task at a time! <strong>DONE</strong>
 
-Replace onclick handler with Event Listeners!!! **DONE**
+**Replace onclick handler with Event Listeners!!! **DONE**
 
 Add Media Queries!
 
