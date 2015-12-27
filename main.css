@@ -30,7 +30,6 @@ ul {
     margin: 0 5px;
     padding: 10px;
     
- 
 }
 
 li {
@@ -71,7 +70,6 @@ CONTAINERS
     border-radius: 5px;
     box-shadow: 0 6px 10px -4px black;
     display: flex;
-    flex-flow column wrap;
 }
 
 
