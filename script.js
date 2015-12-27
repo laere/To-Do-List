@@ -1,6 +1,6 @@
 //array used for localstorage
 var listItemArray = [];
-var data = data || [];
+// var data = data || [];
   
 window.onload = function() {
 //global variables (global scope)
@@ -84,13 +84,13 @@ function fetch(key, callback) {
 
 
 function render(data) {
-  // if (data !== null  && data.hasOwnProperty('forEach')) {
+  if (data !== null  && data.hasOwnProperty('forEach')) {
   //for each current value in local storage
   data.forEach(function (current) {
     //add it to the page
     renderList(current);
   });
-  
+  }
 }
 
 
